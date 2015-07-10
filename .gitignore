@@ -1,0 +1,8 @@
+/x64
+/Release
+/ipch
+/*.swp
+/*.*~
+/*.sdf
+/*.opensdf
+/*.rar
