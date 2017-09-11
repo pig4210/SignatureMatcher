@@ -14,7 +14,7 @@ void showinfo(const char* const buf);
 extern bool g_file_sig;
 
 extern string g_filename;
-extern line g_signature;
+extern string g_signature;
 
 extern bool g_create_atom;
 extern bool g_cx11;
@@ -149,8 +149,8 @@ DWORD WINAPI Thd_Match(PVOID lParam)
       if(g_create_atom)
         {
         const DWORD atom_start_time = GetTickCount();
-        line sig(g_signature);
-        const line atoms(signaturematcher::create_atom_by_script(sig));
+        string sig(g_signature);
+        const auto atoms(signaturematcher::create_atom_by_script(sig));
         if(!atoms.empty())
           {
           string atomname(g_filename);

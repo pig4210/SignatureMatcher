@@ -29,7 +29,6 @@ System::Void SelectMem::SelectMem_Load(System::Object^  sender, System::EventArg
       msg.clear();
       msg << (void*)m.modBaseAddr;
       DGV_mem->Rows[index]->Cells[0]->Value = gcnew System::String(msg.c_str());
-
       const pe tmppe(m.hModule);
       const xblk blk(g_img_code ? tmppe.GetImage() : tmppe.GetCode());
       msg.clear();

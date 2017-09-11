@@ -277,7 +277,7 @@ System::Void dlg::GB_Main_DragDrop(System::Object^  sender, System::Windows::For
 bool g_file_sig = false;
 
 string g_filename;
-line g_signature;
+string g_signature;
 
 static HANDLE g_thd_matcher = nullptr;      //!< 工作线程
 
@@ -401,7 +401,7 @@ System::Void dlg::Btn_Match_Click(System::Object^  sender, System::EventArgs^  e
     //提取特征码
     const char* sig = (char*)(void*)System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(TB_Sig->Text);
 
-    g_signature.assign((unsigned char*)sig);
+    g_signature.assign(sig);
 
     System::Runtime::InteropServices::Marshal::FreeHGlobal((System::IntPtr)(void*)sig);
     }
