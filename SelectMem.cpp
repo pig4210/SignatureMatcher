@@ -37,29 +37,6 @@ System::Void SelectMem::SelectMem_Load(System::Object^  sender, System::EventArg
 
       DGV_mem->Rows[index]->Cells[2]->Value = gcnew System::String(m.szExePath);
       }
-#ifdef _WIN64
-    Snapshot<
-      MODULEENTRY32,
-      Module32First,
-      Module32Next,
-      TH32CS_SNAPMODULE32> mms;
-    for(auto m : mms)
-      {
-
-      int index = DGV_mem->Rows->Add();
-      msg.clear();
-      msg << (void*)m.modBaseAddr;
-      DGV_mem->Rows[index]->Cells[0]->Value = gcnew System::String(msg.c_str());
-
-      const pe tmppe(m.hModule);
-      const xblk blk(g_img_code ? tmppe.GetImage() : tmppe.GetCode());
-      msg.clear();
-      msg << blk.end();
-      DGV_mem->Rows[index]->Cells[1]->Value = gcnew System::String(msg.c_str());
-
-      DGV_mem->Rows[index]->Cells[2]->Value = gcnew System::String(m.szExePath);
-      }
-#endif
     }
   else
     {

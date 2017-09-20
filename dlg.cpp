@@ -9,7 +9,7 @@
 #include "SelectMem.h"
 
 static const wchar_t* const gk_app_name = L"特征码扫描/更新";
-static const wchar_t* const gk_app_ver = L"ver 1.0";
+static const wchar_t* const gk_app_ver = L"ver 2.0";
 static const wchar_t* const gk_author = L"by triones";
 static const wchar_t* const gk_copyright = L"All rights reserved (c)";
 
@@ -23,6 +23,7 @@ void CLR_Main()
   mydlg = gcnew dlg;
   mydlg->ShowDialog();
   }
+
 DWORD WINAPI StartCLR(PVOID lParam)
   {
   UNREFERENCED_PARAMETER(lParam);
@@ -411,7 +412,6 @@ System::Void dlg::Btn_Match_Click(System::Object^  sender, System::EventArgs^  e
 
   g_thd_matcher = CreateThread(nullptr, 0, Thd_Match, nullptr, 0, nullptr);
   }
-
 
 //! 控制不同选项显隐
 System::Void dlg::RB_File_CheckedChanged(System::Object^  sender, System::EventArgs^  e)

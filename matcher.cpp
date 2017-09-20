@@ -34,7 +34,6 @@ class mathcer_log : public xmsg
 
 #define mlog mathcer_log()
 
-
 static vector<xblk> g_blks;
 
 static signaturematcher::REPORT g_report;
@@ -46,11 +45,11 @@ static bool match_report(const signaturematcher::REPORT& rep)
     mlog << "Æ¥ÅäÊ§°Ü";
     return false;
     }
-  for(auto node : rep)
+  for(const auto& node : rep)
     {
     xmsg msg;
     msg << ">>\t" << node.first << "\t=\t";
-    signaturematcher::REPORT_VALUE& rv = node.second.values;
+    const auto& rv = node.second.values;
     switch(rv.t)
       {
       case 'q': msg << rv.q;  break;

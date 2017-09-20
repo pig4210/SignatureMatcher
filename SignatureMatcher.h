@@ -2,12 +2,13 @@
   \file  SignatureMatcher.h
   \brief 用于定位特征码
 
-  \section SignatureMatcher ver 1.0.1405.0511 (Only For Ring3)
+  \section SignatureMatcher ver 2.0.1709.1111 (Only For Ring3)
 
   - \b 支持解析SIG文件，ATOM文件，特征码串
   - \b 特征码支持脚本格式
   - \b 支持文件拖放、特征码拖放，拖放后立即解析
   - \b 文件解析结果自动生成头文件，支持生成C++11的头文件
+  - \b ATOM文件不兼容旧版本
 
   \code
   \endcode
